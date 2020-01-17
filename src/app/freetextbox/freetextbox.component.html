@@ -1,0 +1,9 @@
+<div class="textbox-container">
+  <form #commentBox="ngForm" (ngSubmit)="saveComment(commentBox.value)" novalidate>
+    <textarea [maxLength]="charactersMaximumLimit" [(ngModel)]="textAdded" name="commentText" rows="8" cols="80" (ngModelChange)="countCharactersRemaining()"></textarea>
+    <br>
+    <button type="submit" name="button">Save</button>
+    <br>
+    Characters Remaining: {{charactersRemaining}} / {{charactersMaximumLimit}}
+  </form>
+</div>
